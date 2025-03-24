@@ -31,8 +31,7 @@ class CountryCard extends HTMLElement {
           }
           
           .country-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.8);
           }
           
           .country-card:before {
@@ -66,11 +65,11 @@ class CountryCard extends HTMLElement {
             height: 80px;
             object-fit: cover;
             border-radius: 4px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.28);
             transition: transform 0.3s ease;
           }
           
-          .country-card:hover .flag {
+          .country-card:hover  {
             transform: scale(1.05);
           }
           
