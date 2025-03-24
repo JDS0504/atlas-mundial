@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Países del Mundo</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="top">
+    <p>Explora nuestro planeta</p>
+  </div>
+  
+  <header class="header">
+    <h1>Países del Mundo</h1>
+    <p>Información geográfica actualizada</p>
+  </header>
+  
+  <div class="content">
+    <div class="main-content">
+      <div class="countries-grid" id="countriesGrid">
+        <!-- Aquí se cargarán los países dinámicamente -->
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <p>Datos obtenidos de REST Countries API</p>
+  </footer>
+  
+  <div class="bottom">
+    <p>&copy; 2025 - Reto JS</p>
+  </div>
+
+  <!-- Modal para mostrar continente -->
+  <div id="continentModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2 id="modalTitle">Continente</h2>
+      <p id="modalContent"></p>
+    </div>
+  </div>
+
+  <script src="js/components/country-card.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
