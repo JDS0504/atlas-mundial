@@ -9,13 +9,14 @@
     line-height: 1.6;
     color: #2c3e50;
     background-color: #f9fafb;
+    overflow-x: hidden;
   }
   
   .top, .bottom {
     background-color: #2c3e50;
     color: white;
     text-align: center;
-    padding: 0.7rem;
+    padding: 0.5rem;
     font-size: 0.9rem;
   }
   
@@ -23,7 +24,7 @@
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     color: white;
     text-align: center;
-    padding: 3.5rem 1rem;
+    padding: 2rem 1rem;
     position: relative;
     overflow: hidden;
   }
@@ -41,22 +42,22 @@
   }
   
   .header h1 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     position: relative;
     z-index: 1;
   }
   
   .header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     opacity: 0.9;
     position: relative;
     z-index: 1;
   }
   
   .content {
-    padding: 3rem 1.5rem;
+    padding: 1.5rem;
   }
   
   .main-content {
@@ -66,17 +67,16 @@
   
   .countries-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    margin-bottom: 2.5rem;
-    min-height: 800px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
   }
   
   .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     gap: 1rem;
   }
   
@@ -85,9 +85,9 @@
     color: white;
     border: none;
     border-radius: 6px;
-    padding: 0.7rem 1.5rem;
+    padding: 0.5rem 1.2rem;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s;
@@ -111,7 +111,7 @@
   }
   
   .page-indicator {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #505b69;
     font-weight: 500;
   }
@@ -119,7 +119,7 @@
   .footer {
     background-color: #2c3e50;
     color: white;
-    padding: 3rem 1.5rem;
+    padding: 1.5rem;
   }
   
   .footer-content {
@@ -128,19 +128,19 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   
   .footer-section {
     flex: 1;
-    min-width: 250px;
+    min-width: 200px;
   }
   
   .footer-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
     position: relative;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
   }
   
   .footer-section h3:after {
@@ -148,8 +148,8 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 50px;
-    height: 3px;
+    width: 40px;
+    height: 2px;
     background: #4facfe;
   }
   
@@ -167,11 +167,10 @@
   
   .modal-content {
     background-color: white;
-    margin: 5% auto;
+    margin: 10% auto;
     width: 90%;
     max-width: 900px;
     max-height: 90vh;
-    overflow-y: auto;
     border-radius: 12px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     position: relative;
@@ -189,15 +188,15 @@
   
   .close-button {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 2rem;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
     cursor: pointer;
     color: #000000;
     transition: all 0.3s;
     z-index: 10;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -211,51 +210,57 @@
   }
   
   .modal-body {
-    padding: 0;
+    overflow-y: auto;
+    max-height: 90vh;
+    /* Asegura que el contenido se desplaza mientras el botón queda fijo */
   }
   
   .modal-header {
     display: flex;
     align-items: center;
-    padding: 2rem;
+    padding: 1.5rem;
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     border-radius: 12px 12px 0 0;
     color: white;
+    position: sticky;
+    top: 0;
+    z-index: 5;
   }
   
   .modal-flag {
-    width: 100px;
+    width: 120px;
     height: auto;
-    border-radius: 8px;
+    border-radius: 6px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border: 3px solid white;
+    border: 2px solid white;
   }
   
   .modal-title-container {
-    margin-left: 1.5rem;
+    margin-left: 1rem;
   }
   
   .modal-title {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 700;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
   }
   
   .modal-subtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
     opacity: 0.9;
   }
   
   .modal-info-container {
-    padding: 2rem;
+    padding: 1.5rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
   }
+  
   .modal-info-section {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     border-bottom: 1px solid #eee;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
   }
   
   .modal-info-section:last-child {
@@ -265,9 +270,9 @@
   }
   
   .modal-info-section h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #2c3e50;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     position: relative;
     display: inline-block;
   }
@@ -278,7 +283,7 @@
     bottom: -5px;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background: linear-gradient(90deg, #4facfe, #00f2fe);
     border-radius: 3px;
   }
@@ -286,7 +291,7 @@
   .info-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 0.8rem;
   }
   
   .info-item {
@@ -299,24 +304,25 @@
   }
   
   .info-label {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #7f8c8d;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
   }
   
   .info-value {
     font-weight: 500;
     color: #2c3e50;
+    font-size: 0.9rem;
   }
   
   .code-tag {
     display: inline-block;
     background-color: #f1f5f9;
-    padding: 0.3rem 0.6rem;
+    padding: 0.2rem 0.5rem;
     border-radius: 4px;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem;
   }
   
   @keyframes fadeIn {
@@ -335,30 +341,34 @@
     }
     
     .header h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
     
     .info-grid {
       grid-template-columns: 1fr;
     }
+    
+    .modal-info-container {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   
   @media (max-width: 768px) {
     .header {
-      padding: 2.5rem 1rem;
+      padding: 1.5rem 1rem;
     }
     
     .header h1 {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
     }
     
     .content {
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
     }
     
     .footer-content {
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
     }
     
     .modal-header {
@@ -367,7 +377,7 @@
     }
     
     .modal-flag {
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
     
     .modal-title-container {
@@ -381,41 +391,37 @@
     }
     
     .header h1 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
     
     .header p {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
     
     .pagination {
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 0.6rem;
     }
     
     .modal-content {
       width: 95%;
-      margin: 10% auto;
+      margin: 5% auto;
     }
     
     .modal-header {
-      padding: 1.5rem;
-    }
-    
-    .modal-flag {
-      width: 80px;
+      padding: 1.2rem;
     }
     
     .modal-title {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
     
     .modal-info-container {
-        grid-template-columns: 1fr;
-      padding: 1.5rem;
+      grid-template-columns: 1fr;
+      padding: 1.2rem;
     }
     
     .info-grid {
-      gap: 0.8rem;
+      gap: 0.6rem;
     }
   }

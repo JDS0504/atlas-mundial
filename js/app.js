@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     let allCountries = [];
     let currentPage = 1;
-    const countriesPerPage = 12;
+    const countriesPerPage = 12; 
     let totalPages = 1;
   
     closeButton.addEventListener('click', () => {
@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (currentPage > 1) {
         currentPage--;
         renderCountriesPage();
+        window.scrollTo(0, 0);
       }
     });
   
@@ -145,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (currentPage < totalPages) {
         currentPage++;
         renderCountriesPage();
+        window.scrollTo(0, 0);
       }
     });
   

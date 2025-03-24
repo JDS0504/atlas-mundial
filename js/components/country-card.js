@@ -16,25 +16,23 @@ class CountryCard extends HTMLElement {
         <style>
           .country-card {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.56);
+            padding: 0.8rem;
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            grid-template-rows: auto 1fr;
+            gap: 0.6rem;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            min-height: 150px;
           }
           
           .country-card:hover {
-            transform:  scale(1.1);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-          }
-          
-          .country-card:hover:before {
-            height: 100%;
-            opacity: 0.08;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
           }
           
           .country-card:before {
@@ -43,38 +41,54 @@ class CountryCard extends HTMLElement {
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
+            height: 3px;
             background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
             transition: height 0.3s ease, opacity 0.3s ease;
             opacity: 1;
             z-index: 0;
           }
           
+          .country-card:hover:before {
+            height: 100%;
+            opacity: 0.05;
+          }
+          
+          .flag-container {
+            grid-column: 1;
+            grid-row: 1 / span 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
           .flag {
             width: 100%;
-            height: 150px;
+            height: 80px;
             object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.5s ease;
-            z-index: 1;
-            position: relative;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
           }
           
           .country-card:hover .flag {
             transform: scale(1.05);
           }
           
+          .name-container {
+            grid-column: 2;
+            grid-row: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
           .country-name {
-            font-size: 1.4rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            margin: 0.8rem 0;
+            margin: 0;
             color: #2c3e50;
             transition: color 0.3s;
-            position: relative;
-            display: inline-block;
-            z-index: 1;
+            text-align: center;
           }
           
           .country-card:hover .country-name {
@@ -82,15 +96,15 @@ class CountryCard extends HTMLElement {
           }
           
           .details {
-            margin-top: auto;
-            font-size: 0.95rem;
+            grid-column: 2;
+            grid-row: 2;
+            font-size: 0.8rem;
             color: #505b69;
             z-index: 1;
-            position: relative;
           }
           
           .details p {
-            margin: 0.6rem 0;
+            margin: 0.3rem 0;
           }
           
           .detail-label {
@@ -101,21 +115,17 @@ class CountryCard extends HTMLElement {
           .detail-value {
             color: #505b69;
           }
-          
-          @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-          }
-          
-          .country-card:active {
-            animation: pulse 0.3s ease;
-          }
         </style>
         
         <div class="country-card">
-          <img class="flag" src="${this._country.flags.svg}" alt="Bandera de ${this._country.name.common}">
-          <h3 class="country-name">${this._country.name.common}</h3>
+          <div class="flag-container">
+            <img class="flag" src="${this._country.flags.svg}" alt="Bandera de ${this._country.name.common}">
+          </div>
+          
+          <div class="name-container">
+            <h3 class="country-name">${this._country.name.common}</h3>
+          </div>
+          
           <div class="details">
             <p><span class="detail-label">Capital:</span> <span class="detail-value">${this._country.capital ? this._country.capital[0] : 'N/A'}</span></p>
             <p><span class="detail-label">Población:</span> <span class="detail-value">${this._country.population.toLocaleString()}</span></p>
