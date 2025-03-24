@@ -3,41 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Países del Mundo</title>
+  <title>Atlas Mundial</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 </head>
 <body>
   <div class="top">
-    <p>Explora nuestro planeta</p>
+    <p>Descubre nuestro planeta</p>
   </div>
   
   <header class="header">
-    <h1>Países del Mundo</h1>
-    <p>Información geográfica actualizada</p>
+    <h1>Atlas Mundial</h1>
+    <p>Explora los países y sus datos clave</p>
   </header>
   
   <div class="content">
     <div class="main-content">
-      <div class="countries-grid" id="countriesGrid">
-        <!-- Aquí se cargarán los países dinámicamente -->
+      <div class="countries-grid" id="countriesGrid"></div>
+      
+      <div class="pagination">
+        <button id="prevPage" class="pagination-btn">Anterior</button>
+        <div id="pageIndicator" class="page-indicator">Página <span id="currentPage">1</span> de <span id="totalPages">1</span></div>
+        <button id="nextPage" class="pagination-btn">Siguiente</button>
       </div>
     </div>
   </div>
   
   <footer class="footer">
-    <p>Datos obtenidos de REST Countries API</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Atlas Mundial</h3>
+        <p>Descubre información geográfica actualizada de todos los países del mundo.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Datos</h3>
+        <p>Información obtenida de REST Countries API</p>
+      </div>
+    </div>
   </footer>
   
   <div class="bottom">
-    <p>&copy; 2025 - Reto JS</p>
+    <p>&copy; 2025 Atlas Mundial - Todos los derechos reservados</p>
   </div>
 
-  <!-- Modal para mostrar continente -->
-  <div id="continentModal" class="modal">
+  <div id="countryModal" class="modal">
     <div class="modal-content">
       <span class="close-button">&times;</span>
-      <h2 id="modalTitle">Continente</h2>
-      <p id="modalContent"></p>
+      <div id="modalBody" class="modal-body"></div>
     </div>
   </div>
 
